@@ -2,7 +2,7 @@ let easy = document.getElementById('easy');
 let medium = document.getElementById('medium');
 let difficult = document.getElementById('difficult');
 let button = document.getElementById ('button');
-let playingCard = document.querySelectorAll('.card');
+let playingCard = document.getElementsByClassName('card');
 
 easy.addEventListener ('click', () => {
 	easy.classList.add('active');
