@@ -2,7 +2,9 @@ let easy = document.getElementById('easy');
 let medium = document.getElementById('medium');
 let difficult = document.getElementById('difficult');
 let button = document.getElementById ('button');
-let playingCard = document.getElementsByClassName('card');
+let playingCard = document.querySelector('.cardholder');
+let back = document.querySelector('.card__back')
+console.log(back);
 
 easy.addEventListener ('click', () => {
 	easy.classList.add('active');
@@ -28,15 +30,32 @@ button.addEventListener ('click', () => {
 
 	switch(true) {
 		case start == document.getElementById('medium'):
-		document.querySelector('.container-medium').classList.remove('disable');
+		document.getElementById('container').classList.remove('container-easy', 'disable');
+		document.getElementById('container').classList.add('container-medium');
+		for (i = 0; i < 5; i++) {
+			let clone = playingCard.cloneNode(true);
+			document.getElementById('container').appendChild(clone);
+		}
 		break;
 		case start == document.getElementById('difficult'):
-		document.querySelector('.container-difficult').classList.remove('disable');
+		document.getElementById('container').classList.remove('container-easy', 'disable');
+		document.getElementById('container').classList.add('container-difficult');
+		for (i = 0; i < 9; i++) {
+			let clone = playingCard.cloneNode(true);
+			document.getElementById('container').appendChild(clone);
+		}
 		break;
 		default:
-		document.querySelector('.container-easy').classList.remove('disable');
+		document.getElementById('container').classList.remove('disable');
+		for (i = 0; i < 2; i++) {
+			let clone = playingCard.cloneNode(true);
+			document.getElementById('container').appendChild(clone);
+		}
 	}
+
+	let cardsMassive = Array.from(document.getElementById('container').children);
+	let randomCard = cardsMassive[Math.floor(Math.random()*cardsMassive.length)];
+	console.log(randomCard);
+	() => {back.classList.add('card__back_win');};
 })
 
-const cardOnClick = () => playingCard.classList.add('card__change');
-playingCard.addEventListener('click', cardOnClick);
