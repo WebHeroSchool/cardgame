@@ -4,8 +4,7 @@ let difficult = document.getElementById('difficult');
 let button = document.getElementById ('button');
 let playingCard = document.querySelector('.cardholder');
 let back = document.querySelector('.card__back')
-console.log(back);
-let cardItem = document.querySelectorAll('.card');
+
 
 easy.addEventListener ('click', () => {
 	easy.classList.add('active');
@@ -56,13 +55,15 @@ button.addEventListener ('click', () => {
 
 	let cardsMassive = Array.from(document.getElementById('container').children);
 	let randomCard = cardsMassive[Math.floor(Math.random()*cardsMassive.length)];
-	console.log(randomCard);
 	randomCard.querySelector('.card__back').classList.add('card__back_win');
 	randomCard.querySelector('.card__back').classList.remove('card__back');
-})
 
-cardItem.forEach(function(elem, i){
-	elem.addEventListener('click', () => {
-		elem.classList.toggle('card__change');
-		})
+	let cardItem = document.querySelectorAll('.card');
+	cardItem.forEach(function(elem, i){
+		let func = () => {
+			elem.classList.add('card__change');
+		}
+		elem.addEventListener('click', func);
+	})
+
 })
