@@ -60,10 +60,9 @@ button.addEventListener ('click', () => {
 
 	let cardItem = document.querySelectorAll('.card');
 	cardItem.forEach(function(elem, i){
-		let func = () => {
+		elem.addEventListener('click', () => {
 			elem.classList.add('card__change');
-		}
-		elem.addEventListener('click', func);
+		});
 	})
 
 })
