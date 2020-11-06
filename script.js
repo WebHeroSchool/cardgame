@@ -24,7 +24,7 @@ difficult.addEventListener ('click', () => {
 	medium.classList.remove('active');
 })
 
-button.addEventListener ('click', function(aaaa) {
+button.addEventListener ('click', () => {
 	document.querySelector('.container').classList.toggle('disable');
 	let start = document.querySelector('.active');
 
