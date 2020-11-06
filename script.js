@@ -24,7 +24,7 @@ difficult.addEventListener ('click', () => {
 	medium.classList.remove('active');
 })
 
-button.addEventListener ('click', () => {
+button.addEventListener ('click', function(aaaa) {
 	document.querySelector('.container').classList.toggle('disable');
 	let start = document.querySelector('.active');
 
@@ -59,10 +59,19 @@ button.addEventListener ('click', () => {
 	randomCard.querySelector('.card__back').classList.remove('card__back');
 
 	let cardItem = document.querySelectorAll('.card');
+
 	cardItem.forEach(function(elem, i){
 		elem.addEventListener('click', () => {
-			elem.classList.add('card__change');
+			if (elem != document.querySelector('.card__change')) {
+				elem.classList.add('card__change');
+			} else {
+				document.querySelector('.container').classList.toggle('disable');
+				document.getElementById('container').classList.add('container-easy', 'disable');
+				document.getElementById('container').classList.remove('container-medium', 'container-difficult');
+				for (i = cardsMassive.length; i > 1; i--) {
+				document.getElementById('container').removeChild(document.querySelector('.cardholder'));}
+				elem.classList.remove('card__change');
+			}
 		});
 	})
-
 })
