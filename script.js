@@ -4,24 +4,33 @@ let difficult = document.getElementById('difficult');
 let button = document.getElementById ('button');
 let section = document.getElementById('container');
 
+function difficulty(a, b, c) {
+	a.classList.add('active');
+	b.classList.remove('active');
+	c.classList.remove('active');
+}
 
-easy.addEventListener ('click', () => {
-	easy.classList.add('active');
-	medium.classList.remove('active');
-	difficult.classList.remove('active');
-})
+easy.addEventListener ('click', difficulty(easy, medium, difficult));
+medium.addEventListener ('click', difficulty(medium, easy, difficult));
+difficult.addEventListener ('click', difficulty(difficult, easy, medium));
 
-medium.addEventListener ('click', () => {
-	medium.classList.add('active');
-	easy.classList.remove('active');
-	difficult.classList.remove('active');
-})
+// easy.addEventListener ('click', () => {
+// 	easy.classList.add('active');
+// 	medium.classList.remove('active');
+// 	difficult.classList.remove('active');
+// })
 
-difficult.addEventListener ('click', () => {
-	difficult.classList.add('active');
-	easy.classList.remove('active');
-	medium.classList.remove('active');
-})
+// medium.addEventListener ('click', () => {
+// 	medium.classList.add('active');
+// 	easy.classList.remove('active');
+// 	difficult.classList.remove('active');
+// })
+
+// difficult.addEventListener ('click', () => {
+// 	difficult.classList.add('active');
+// 	easy.classList.remove('active');
+// 	medium.classList.remove('active');
+// })
 
 button.addEventListener ('click', () => {
 	document.querySelector('.container').classList.toggle('disable');
