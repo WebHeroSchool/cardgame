@@ -57,12 +57,10 @@ body {
 	cursor: pointer;
 }
 
-.active:before {
-	position: absolute;
-	content: '';
+input[type="radio"]:checked {
 	width: 18px;
 	height: 18px;
-	background: #D62B2E;
+	background-color: #D62B2E;
 	transform: rotate(45deg);
 	margin: 15px 0 0 -30px;
 }

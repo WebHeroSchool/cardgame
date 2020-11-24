@@ -11,11 +11,14 @@
 		<div class="menu">
 			<h1 class="menu_heading">Выберите уровень сложности:</h1>
 			<p class="menu_paragraph">Выберите сложность и игра начнется. Чем выше уровень - тем больше будет выборка карт.</p>
-			<ul class="menu_list">
-				<li id="easy">Простой</li>
-				<li id="medium">Средний</li>
-				<li id="difficult">Сложный</li>
-			</ul>
+			<form class="menu_list">
+				<input type="radio" name="level" value="level_easy" id="easy" checked>Простой
+				<br>
+				<input type="radio" name="level" value="level_medium"  id="medium">Средний
+				<br>
+				<input type="radio" name="level" value="level_difficult"  id="difficult">Сложный
+				<br>
+			</form>
 			<button id="button" class="menu_button"><span class="button-text">Начать игру</span></button>
 			<div class="menu__first-card"></div>
 			<div class="menu__second-card"></div>

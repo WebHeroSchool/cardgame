@@ -4,37 +4,9 @@ let difficult = document.getElementById('difficult');
 let button = document.getElementById ('button');
 let section = document.getElementById('container');
 
-function difficulty(a, b, c) {
-	a.classList.add('active');
-	b.classList.remove('active');
-	c.classList.remove('active');
-}
-
-easy.addEventListener ('click', difficulty(easy, medium, difficult));
-medium.addEventListener ('click', difficulty(medium, easy, difficult));
-difficult.addEventListener ('click', difficulty(difficult, easy, medium));
-
-// easy.addEventListener ('click', () => {
-// 	easy.classList.add('active');
-// 	medium.classList.remove('active');
-// 	difficult.classList.remove('active');
-// })
-
-// medium.addEventListener ('click', () => {
-// 	medium.classList.add('active');
-// 	easy.classList.remove('active');
-// 	difficult.classList.remove('active');
-// })
-
-// difficult.addEventListener ('click', () => {
-// 	difficult.classList.add('active');
-// 	easy.classList.remove('active');
-// 	medium.classList.remove('active');
-// })
-
 button.addEventListener ('click', () => {
 	document.querySelector('.container').classList.toggle('disable');
-	let start = document.querySelector('.active');
+	let start = document.querySelector('input[type="radio"]:checked');
 
 	section.insertAdjacentHTML('afterbegin','<div><div><div></div><div></div></div></div>');
 	let cardholder = section.firstChild;
@@ -45,6 +17,7 @@ button.addEventListener ('click', () => {
 	card.firstChild.classList.add("card__font");
 	card.lastChild.classList.add("card__back");
 	let back = document.querySelector('.card__back');
+	let clone = playingCard.cloneNode(true);
 	switch(true) {
 		case start == document.getElementById('medium'):
 		section.classList.remove('container-easy', 'disable');
