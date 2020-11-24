@@ -57,12 +57,10 @@ body {
 	cursor: pointer;
 }
 
-.active:before {
-	position: absolute;
-	content: '';
+input[type="radio"]:checked {
 	width: 18px;
 	height: 18px;
-	background: #D62B2E;
+	background-color: #D62B2E;
 	transform: rotate(45deg);
 	margin: 15px 0 0 -30px;
 }
@@ -152,6 +150,16 @@ body {
 .card__back {
 	position: absolute;
 	background: url(../images/card-gameover.png);
+	background-size: contain;
+	transform: rotateY(180deg);
+	width: 100%;
+	height: 100%;
+	backface-visibility: hidden;
+}
+
+.card__back_win {
+	position: absolute;
+	background: url(../images/card-win.png);
 	background-size: contain;
 	transform: rotateY(180deg);
 	width: 100%;
